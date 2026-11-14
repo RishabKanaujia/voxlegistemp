@@ -1,0 +1,1604 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta
+    name="description"
+    content="Explore the VoxLegis editions archive and discover the themes represented across its collections."
+  >
+  <meta name="theme-color" content="#172b3a">
+
+  <title>Editions Archive | VoxLegis</title>
+
+  <!-- Fonts: Same as index.html -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Bootstrap -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+
+  <!-- Bootstrap Icons -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    rel="stylesheet"
+  >
+
+  <style>
+    /* =========================================
+       1. GLOBAL DESIGN SYSTEM
+       Same foundation as index.html
+    ========================================= */
+
+    :root {
+      --ink: #172b3a;
+      --ink-soft: #2c4352;
+      --paper: #f7f5f0;
+      --white: #fffefa;
+      --muted: #68747a;
+      --line: #dedbd2;
+      --wine: #7b303d;
+      --brass: #b28b50;
+
+      --serif: "Libre Baskerville", Georgia, serif;
+      --sans: "DM Sans", Arial, sans-serif;
+
+      --container: 1180px;
+      --ease: 180ms ease;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 15px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible {
+      outline: 3px solid var(--brass);
+      outline-offset: 4px;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: 1rem;
+      top: -5rem;
+      z-index: 2000;
+      padding: .7rem 1rem;
+      background: var(--white);
+      color: var(--ink);
+    }
+
+    .skip-link:focus {
+      top: 1rem;
+    }
+
+    .container-editorial {
+      width: min(calc(100% - 48px), var(--container));
+      margin-inline: auto;
+    }
+
+
+    /* =========================================
+       2. SHARED HEADER
+       Dimensions copied from index.html
+    ========================================= */
+
+    .institution-strip {
+      background: var(--ink);
+      color: #e9e7e0;
+      font-size: .69rem;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .institution-strip .strip-inner {
+      min-height: 35px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .institution-strip p {
+      margin: 0;
+    }
+
+    .masthead {
+      background: var(--white);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .masthead-inner {
+      min-height: 116px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 15px;
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      width: 51px;
+      height: 51px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--brass);
+      color: var(--wine);
+      font-family: var(--serif);
+      font-size: 1.65rem;
+      line-height: 1;
+    }
+
+    .brand-name {
+      display: block;
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      line-height: 1.12;
+      letter-spacing: -.07em;
+    }
+
+    .brand-name span {
+      color: var(--wine);
+    }
+
+    .brand-tagline {
+      display: block;
+      margin-top: .35rem;
+      color: var(--muted);
+      font-size: .66rem;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    .masthead-note {
+      max-width: 255px;
+      padding-left: 1.25rem;
+      border-left: 1px solid var(--line);
+      color: var(--muted);
+      font-size: .78rem;
+      line-height: 1.6;
+    }
+
+    .masthead-note strong {
+      display: block;
+      margin-bottom: .25rem;
+      color: var(--ink);
+      font-size: .72rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+
+    /* =========================================
+       3. SHARED NAVIGATION
+       Dimensions copied from index.html
+    ========================================= */
+
+    .main-nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .main-nav .navbar {
+      padding: 0;
+    }
+
+    .main-nav .navbar-nav {
+      gap: .25rem;
+    }
+
+    .main-nav .nav-link {
+      position: relative;
+      padding: 1rem .95rem !important;
+      color: #46545d;
+      font-size: .77rem;
+      font-weight: 600;
+      transition: color var(--ease);
+    }
+
+    .main-nav .nav-link::after {
+      position: absolute;
+      right: .95rem;
+      bottom: 0;
+      left: .95rem;
+      height: 2px;
+      background: var(--wine);
+      content: "";
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform var(--ease);
+    }
+
+    .main-nav .nav-link:hover,
+    .main-nav .nav-link.active {
+      color: var(--wine);
+    }
+
+    .main-nav .nav-link:hover::after,
+    .main-nav .nav-link.active::after {
+      transform: scaleX(1);
+    }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: .55rem;
+      margin-left: auto;
+      padding: .62rem .95rem;
+      background: var(--wine);
+      color: white;
+      font-size: .75rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background var(--ease);
+    }
+
+    .nav-cta:hover {
+      background: var(--ink);
+      color: white;
+    }
+
+
+    /* =========================================
+       4. SHARED TYPOGRAPHY
+    ========================================= */
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: .65rem;
+      color: var(--wine);
+      font-size: .69rem;
+      font-weight: 700;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 25px;
+      height: 1px;
+      background: var(--brass);
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 1.5rem;
+      padding-bottom: 1rem;
+      margin-bottom: 1.7rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-heading h2 {
+      margin: .4rem 0 0;
+      font-family: var(--serif);
+      font-size: clamp(1.5rem, 2.4vw, 2.1rem);
+      letter-spacing: -.045em;
+      line-height: 1.25;
+    }
+
+
+    /* =========================================
+       5. EDITIONS INTRODUCTION
+    ========================================= */
+
+    .intro-band {
+      padding: 2.1rem 0 1.5rem;
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 3rem;
+      align-items: end;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .intro-grid h1 {
+      max-width: 720px;
+      margin: .7rem 0 0;
+      font-family: var(--serif);
+      font-size: clamp(2.45rem, 5.1vw, 4.45rem);
+      font-weight: 400;
+      letter-spacing: -.065em;
+      line-height: 1.12;
+    }
+
+    .intro-grid h1 em {
+      color: var(--wine);
+      font-style: normal;
+    }
+
+    .intro-copy {
+      max-width: 445px;
+      padding-bottom: .25rem;
+      color: #58656c;
+      font-size: .94rem;
+    }
+
+    .intro-copy p {
+      margin: 0 0 1rem;
+    }
+
+    .intro-stat {
+      display: flex;
+      align-items: baseline;
+      gap: .75rem;
+      margin-top: 1.1rem;
+      color: var(--muted);
+      font-size: .72rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .intro-stat strong {
+      color: var(--wine);
+      font-family: var(--serif);
+      font-size: 1.7rem;
+      font-weight: 400;
+      letter-spacing: -.04em;
+    }
+
+
+    /* =========================================
+       6. ARCHIVE SECTION
+    ========================================= */
+
+    .archive-section {
+      padding: 4rem 0 4.5rem;
+    }
+
+    .archive-heading-copy {
+      max-width: 430px;
+      margin: 0;
+      color: var(--muted);
+      font-size: .82rem;
+    }
+
+    .archive-toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+      padding: .9rem 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .archive-status {
+      margin: 0;
+      color: var(--muted);
+      font-size: .75rem;
+    }
+
+    .archive-search {
+      position: relative;
+      width: min(100%, 300px);
+    }
+
+    .archive-search i {
+      position: absolute;
+      top: 50%;
+      left: .9rem;
+      color: var(--muted);
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
+
+    .archive-search input {
+      width: 100%;
+      min-height: 42px;
+      padding: .6rem .8rem .6rem 2.5rem;
+      border: 1px solid var(--line);
+      border-radius: 0;
+      outline: none;
+      background: var(--white);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: .76rem;
+    }
+
+    .archive-search input:focus {
+      border-color: var(--brass);
+      box-shadow: 0 0 0 2px rgba(178, 139, 80, .12);
+    }
+
+
+    /* =========================================
+       7. EDITION CARDS
+    ========================================= */
+
+    .edition-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
+
+    .edition-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      min-height: 300px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--white);
+      color: var(--ink);
+      text-decoration: none;
+      transition:
+        border-color var(--ease),
+        transform var(--ease);
+    }
+
+    .edition-card:hover {
+      z-index: 1;
+      border-color: var(--brass);
+      color: var(--ink);
+      transform: translateY(-4px);
+    }
+
+    .edition-card[hidden] {
+      display: none !important;
+    }
+
+    .edition-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1.4rem 1.4rem 0;
+    }
+
+    .edition-number {
+      color: var(--wine);
+      font-family: var(--serif);
+      font-size: 2.1rem;
+      line-height: 1.2;
+      letter-spacing: -.05em;
+    }
+
+    .edition-index {
+      padding-top: .35rem;
+      color: var(--muted);
+      font-size: .65rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .edition-art {
+      position: relative;
+      display: grid;
+      place-items: center;
+      height: 105px;
+      margin: 1.1rem 1.4rem 0;
+      overflow: hidden;
+      background: var(--paper);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .edition-art::before,
+    .edition-art::after {
+      position: absolute;
+      width: 94px;
+      height: 94px;
+      border: 1px solid rgba(123, 48, 61, .24);
+      border-radius: 50%;
+      content: "";
+    }
+
+    .edition-art::after {
+      width: 67px;
+      height: 67px;
+      border-color: rgba(178, 139, 80, .6);
+    }
+
+    .edition-art span {
+      position: relative;
+      z-index: 1;
+      color: var(--ink);
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      letter-spacing: .08em;
+    }
+
+    .edition-card-body {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      padding: 1.2rem 1.4rem 1.3rem;
+    }
+
+    .edition-label {
+      margin-bottom: .45rem;
+      color: var(--muted);
+      font-size: .64rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .edition-title {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 400;
+      line-height: 1.5;
+      overflow-wrap: anywhere;
+    }
+
+    .edition-card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-top: auto;
+      padding-top: 1.3rem;
+      color: var(--wine);
+      font-size: .75rem;
+      font-weight: 700;
+    }
+
+    .edition-card-footer i {
+      display: inline-grid;
+      place-items: center;
+      width: 32px;
+      height: 32px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      transition:
+        background var(--ease),
+        color var(--ease),
+        border-color var(--ease);
+    }
+
+    .edition-card:hover .edition-card-footer i {
+      border-color: var(--wine);
+      background: var(--wine);
+      color: white;
+    }
+
+    .edition-card:nth-child(3n + 2) .edition-art {
+      background: #f0eee8;
+    }
+
+    .edition-card:nth-child(3n) .edition-art {
+      background: #f4ece9;
+    }
+
+    .no-results {
+      display: none;
+      padding: 2.5rem 1.25rem;
+      border: 1px dashed var(--line);
+      color: var(--muted);
+      text-align: center;
+      font-size: .85rem;
+    }
+
+
+    /* =========================================
+       8. ARCHIVE CLOSING NOTE
+    ========================================= */
+
+    .archive-note {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 1.5rem;
+      margin-top: 3rem;
+      padding: 1.8rem;
+      border: 1px solid var(--line);
+      border-left: 3px solid var(--brass);
+      background: rgba(255, 254, 250, .65);
+    }
+
+    .archive-note h3 {
+      margin: 0 0 .5rem;
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      letter-spacing: -.035em;
+    }
+
+    .archive-note p {
+      max-width: 650px;
+      margin: 0;
+      color: var(--muted);
+      font-size: .82rem;
+    }
+
+    .archive-note i {
+      color: var(--brass);
+      font-size: 2rem;
+    }
+
+
+    /* =========================================
+       9. SHARED FOOTER
+       Dimensions copied from index.html
+    ========================================= */
+
+    .site-footer {
+      background: var(--ink);
+      color: #e7e7e1;
+    }
+
+    .footer-main {
+      display: grid;
+      grid-template-columns: 1.25fr .7fr .9fr;
+      gap: 3rem;
+      padding: 3.2rem 0 2.6rem;
+    }
+
+    .footer-brand {
+      color: white;
+      font-family: var(--serif);
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -.06em;
+    }
+
+    .footer-brand span {
+      color: #d4b27b;
+    }
+
+    .footer-description {
+      max-width: 350px;
+      margin: .9rem 0 0;
+      color: #bac5c8;
+      font-size: .8rem;
+    }
+
+    .footer-heading {
+      margin: .25rem 0 1rem;
+      color: #d4b27b;
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    .footer-links {
+      display: grid;
+      gap: .55rem;
+    }
+
+    .footer-links a {
+      width: fit-content;
+      color: #d7dedd;
+      font-size: .78rem;
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      color: white;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      padding: 1.1rem 0;
+      border-top: 1px solid rgba(255,255,255,.17);
+      color: #aebbc0;
+      font-size: .68rem;
+    }
+
+    .footer-bottom p {
+      margin: 0;
+    }
+
+    .prototype-note {
+      color: #e4c99e;
+    }
+
+
+    /* =========================================
+       10. RESPONSIVE RULES
+       Shared header/footer breakpoints match index
+    ========================================= */
+
+    @media (min-width: 1440px) {
+      .container-editorial {
+        width: min(calc(100% - 80px), var(--container));
+      }
+    }
+
+    @media (max-width: 991.98px) {
+      .container-editorial {
+        width: min(calc(100% - 36px), var(--container));
+      }
+
+      .masthead-inner {
+        min-height: 100px;
+      }
+
+      .masthead-note {
+        max-width: 215px;
+      }
+
+      .main-nav .navbar-nav {
+        gap: 0;
+      }
+
+      .main-nav .nav-link {
+        padding-inline: .65rem !important;
+      }
+
+      .main-nav .nav-link::after {
+        right: .65rem;
+        left: .65rem;
+      }
+
+      .nav-cta {
+        margin: .6rem 0 .8rem;
+      }
+
+      .intro-grid {
+        grid-template-columns: 1fr .8fr;
+        gap: 2rem;
+      }
+
+      .edition-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.25rem;
+      }
+
+      .footer-main {
+        gap: 2rem;
+      }
+    }
+
+    @media (max-width: 767.98px) {
+      .container-editorial {
+        width: min(calc(100% - 32px), var(--container));
+      }
+
+      .institution-strip .strip-inner {
+        min-height: 32px;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .institution-strip .strip-secondary {
+        display: none;
+      }
+
+      .masthead-inner {
+        min-height: 91px;
+      }
+
+      .brand {
+        gap: 10px;
+      }
+
+      .brand-mark {
+        width: 42px;
+        height: 42px;
+        font-size: 1.35rem;
+      }
+
+      .brand-name {
+        font-size: 2.05rem;
+      }
+
+      .brand-tagline {
+        max-width: 230px;
+        font-size: .55rem;
+        letter-spacing: .08em;
+      }
+
+      .masthead-note {
+        display: none;
+      }
+
+      .main-nav .navbar {
+        padding: .35rem 0;
+      }
+
+      .main-nav .navbar-toggler {
+        border: 1px solid var(--line);
+        border-radius: 0;
+        padding: .4rem .65rem;
+      }
+
+      .main-nav .navbar-toggler:focus {
+        box-shadow: none;
+      }
+
+      .main-nav .navbar-collapse {
+        padding: .4rem 0 .7rem;
+      }
+
+      .main-nav .nav-link {
+        padding: .7rem .15rem !important;
+      }
+
+      .main-nav .nav-link::after {
+        right: auto;
+        left: .15rem;
+        width: 28px;
+      }
+
+      .nav-cta {
+        margin: .5rem 0 .25rem;
+      }
+
+      .intro-band {
+        padding-top: 1.65rem;
+      }
+
+      .intro-grid {
+        grid-template-columns: 1fr;
+        gap: 1.1rem;
+        padding-bottom: 1.5rem;
+      }
+
+      .intro-grid h1 {
+        font-size: clamp(2.45rem, 11vw, 3.6rem);
+      }
+
+      .intro-copy {
+        max-width: 560px;
+        font-size: .88rem;
+      }
+
+      .archive-section {
+        padding: 3rem 0;
+      }
+
+      .section-heading {
+        align-items: start;
+        flex-direction: column;
+      }
+
+      .archive-toolbar {
+        align-items: stretch;
+        flex-direction: column;
+        gap: .8rem;
+      }
+
+      .archive-search {
+        width: 100%;
+      }
+
+      .edition-grid {
+        gap: 1rem;
+      }
+
+      .edition-card {
+        min-height: 280px;
+      }
+
+      .edition-card-top {
+        padding: 1.1rem 1rem 0;
+      }
+
+      .edition-number {
+        font-size: 1.8rem;
+      }
+
+      .edition-art {
+        height: 85px;
+        margin: .9rem 1rem 0;
+      }
+
+      .edition-card-body {
+        padding: 1rem;
+      }
+
+      .edition-title {
+        font-size: 1.05rem;
+      }
+
+      .edition-card-footer {
+        padding-top: 1rem;
+      }
+
+      .archive-note {
+        grid-template-columns: 1fr;
+        padding: 1.4rem;
+      }
+
+      .archive-note i {
+        display: none;
+      }
+
+      .footer-main {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem 1.3rem;
+        padding: 2.5rem 0 2rem;
+      }
+
+      .footer-brand-block {
+        grid-column: 1 / -1;
+      }
+
+      .footer-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: .5rem;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .container-editorial {
+        width: calc(100% - 28px);
+      }
+
+      .brand-name {
+        font-size: 1.85rem;
+      }
+
+      .brand-tagline {
+        font-size: .49rem;
+      }
+
+      .edition-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .edition-card {
+        min-height: auto;
+      }
+
+      .edition-art {
+        height: 90px;
+      }
+
+      .edition-card-body {
+        min-height: 165px;
+      }
+
+      .footer-main {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <!-- =====================================
+       SHARED INSTITUTIONAL STRIP
+  ====================================== -->
+
+  <div class="institution-strip">
+    <div class="container-editorial strip-inner">
+      <p>Faculty of Law · The Maharaja Sayajirao University of Baroda</p>
+      <p class="strip-secondary">Vadodara, Gujarat, India</p>
+    </div>
+  </div>
+
+
+  <!-- =====================================
+       SHARED MASTHEAD
+  ====================================== -->
+
+  <header class="masthead">
+    <div class="container-editorial masthead-inner">
+
+      <a class="brand" href="index.html#home" aria-label="VoxLegis homepage">
+        <span class="brand-mark" aria-hidden="true">V</span>
+
+        <span>
+          <span class="brand-name">Vox<span>Legis</span></span>
+          <span class="brand-tagline">
+            A space for legal thought and scholarship
+          </span>
+        </span>
+      </a>
+
+      <div class="masthead-note">
+        <strong>Ideas. Law. Public life.</strong>
+        A proposed digital publication for thoughtful engagement with law and
+        society.
+      </div>
+
+    </div>
+  </header>
+
+
+  <!-- =====================================
+       SHARED NAVIGATION
+  ====================================== -->
+
+  <div class="main-nav">
+    <nav class="navbar navbar-expand-md" aria-label="Primary navigation">
+      <div class="container-editorial">
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#primaryNavigation"
+          aria-controls="primaryNavigation"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="bi bi-list" aria-hidden="true"></i>
+          <span class="ms-1 small">Menu</span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="primaryNavigation">
+
+          <ul class="navbar-nav me-auto">
+
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#home">Home</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#latest">Articles</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#case-analysis">
+                Case Analysis
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                href="editions.html"
+                aria-current="page"
+              >
+                Editions
+              </a>
+            </li>
+
+          </ul>
+
+          <a class="nav-cta" href="index.html#contribute">
+            Contribute
+            <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+          </a>
+
+        </div>
+      </div>
+    </nav>
+  </div>
+
+
+  <!-- =====================================
+       MAIN CONTENT
+  ====================================== -->
+
+  <main id="main-content">
+
+    <!-- Page introduction -->
+
+    <section class="intro-band">
+      <div class="container-editorial">
+
+        <div class="intro-grid">
+
+          <div>
+            <span class="eyebrow">The VoxLegis Archive</span>
+
+            <h1>
+              Ideas across <em>editions.</em>
+            </h1>
+          </div>
+
+          <div class="intro-copy">
+            <p>
+              Every edition represents a different theme, a different set of
+              questions and another opportunity to engage with law and society.
+              Explore the archive and select an edition to discover its contents.
+            </p>
+
+            <div class="intro-stat">
+              <strong id="editionCount">09</strong>
+              <span>Edition titles listed</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- Editions archive -->
+
+    <section class="archive-section">
+      <div class="container-editorial">
+
+        <div class="section-heading">
+
+          <div>
+            <span class="eyebrow">Browse the collection</span>
+            <h2>Editions Archive</h2>
+          </div>
+
+          <p class="archive-heading-copy">
+            From Code Blue to Brave New World, explore the themes represented
+            across the listed editions.
+          </p>
+
+        </div>
+
+
+        <!-- Search toolbar -->
+
+        <div class="archive-toolbar">
+
+          <p class="archive-status" id="archiveStatus" aria-live="polite">
+            Showing all 9 listed editions
+          </p>
+
+          <label class="archive-search">
+            <span class="visually-hidden">
+              Search editions by title or number
+            </span>
+
+            <i class="bi bi-search" aria-hidden="true"></i>
+
+            <input
+              type="search"
+              id="editionSearch"
+              placeholder="Search an edition..."
+              autocomplete="off"
+            >
+          </label>
+
+        </div>
+
+
+        <!-- Edition cards -->
+
+        <div class="edition-grid" id="editionGrid">
+
+          <a
+            class="edition-card"
+            href="edition-1.html"
+            data-title="1.0 Code Blue"
+          >
+            <div class="edition-card-top">
+              <span class="edition-number">01</span>
+              <span class="edition-index">Edition 01</span>
+            </div>
+
+            <div class="edition-art" aria-hidden="true">
+              <span>01</span>
+            </div>
+
+            <div class="edition-card-body">
+              <span class="edition-label">Volume 1.0</span>
+              <h3 class="edition-title">Code Blue</h3>
+
+              <div class="edition-card-footer">
+                <span>Explore edition</span>
+                <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+              </div>
+            </div>
+          </a>
+
+
+          <a
+            class="edition-card"
+            href="edition-2.html"
+            data-title="2.0 En Route"
+          >
+            <div class="edition-card-top">
+              <span class="edition-number">02</span>
+              <span class="edition-index">Edition 02</span>
+            </div>
+
+            <div class="edition-art" aria-hidden="true">
+              <span>02</span>
+            </div>
+
+            <div class="edition-card-body">
+              <span class="edition-label">Volume 2.0</span>
+              <h3 class="edition-title">En Route</h3>
+
+              <div class="edition-card-footer">
+                <span>Explore edition</span>
+                <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+              </div>
+            </div>
+          </a>
+
+
+          <a
+            class="edition-card"
+            href="edition-3.html"
+            data-title="3.0 Transcendence"
+          >
+            <div class="edition-card-top">
+              <span class="edition-number">03</span>
+              <span class="edition-index">Edition 03</span>
+            </div>
+
+            <div class="edition-art" aria-hidden="true">
+              <span>03</span>
+            </div>
+
+            <div class="edition-card-body">
+              <span class="edition-label">Volume 3.0</span>
+              <h3 class="edition-title">Transcendence</h3>
+
+              <div class="edition-card-footer">
+                <span>Explore edition</span>
+                <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+              </div>
+            </div>
+          </a>
+
+
+          <a
+            class="edition-card"
+            href="edition-4.html"
+            data-title="4.0 Cogitate"
+          >
+            <div class="edition-card-top">
+              <span class="edition-number">04</span>
+              <span class="edition-index">Edition 04</span>
+            </div>
+
+            <div class="edition-art" aria-hidden="true">
+              <span>04</span>
+            </div>
+
+            <div class="edition-card-body">
+              <span class="edition-label">Volume 4.0</span>
+              <h3 class="edition-title">Cogitate</h3>
+
+              <div class="edition-card-footer">
+                <span>Explore edition</span>
+                <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+              </div>
+            </div>
+          </a>
+
+
+          <a
+            class="edition-card"
+            href="edition-5.html"
+            data-title="5.0 Aurora"
+          >
+            <div class="edition-card-top">
+              <span class="edition-number">05</span>
+              <span class="edition-index">Edition 05</span>
+            </div>
+
+            <div class="edition-art" aria-hidden="true">
+              <span>05</span>
+            </div>
+
+            <div class="edition-card-body">
+              <span class="edition-label">Volume 5.0</span>
+              <h3 class="edition-title">Aurora</h3>
+
+              <div class="edition-card-footer">
+                <span>Explore edition</span>
+                <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+              </div>
+            </div>
+          </a>
+
+
+          <a
+            class="edition-card"
+            href="edition-6.html"
+            data-title="6.0 Scientia Insight"
+          >
+            <div class="edition-card-top">
+              <span class="edition-number">06</span>
+              <span class="edition-index">Edition 06</span>
+            </div>
+
+            <div class="edition-art" aria-hidden="true">
+              <span>06</span>
+            </div>
+
+            <div class="edition-card-body">
+              <span class="edition-label">Volume 6.0</span>
+              <h3 class="edition-title">Scientia Insight</h3>
+
+              <div class="edition-card-footer">
+                <span>Explore edition</span>
+                <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+              </div>
+            </div>
+          </a>
+
+
+          <a
+            class="edition-card"
+            href="edition-7.html"
+            data-title="7.0 Vulnerables and the Law"
+          >
+            <div class="edition-card-top">
+              <span class="edition-number">07</span>
+              <span class="edition-index">Edition 07</span>
+            </div>
+
+            <div class="edition-art" aria-hidden="true">
+              <span>07</span>
+            </div>
+
+            <div class="edition-card-body">
+              <span class="edition-label">Volume 7.0</span>
+              <h3 class="edition-title">Vulnerables &amp; the Law</h3>
+
+              <div class="edition-card-footer">
+                <span>Explore edition</span>
+                <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+              </div>
+            </div>
+          </a>
+
+
+          <a
+            class="edition-card"
+            href="edition-8.html"
+            data-title="8.0 Liminal"
+          >
+            <div class="edition-card-top">
+              <span class="edition-number">08</span>
+              <span class="edition-index">Edition 08</span>
+            </div>
+
+            <div class="edition-art" aria-hidden="true">
+              <span>08</span>
+            </div>
+
+            <div class="edition-card-body">
+              <span class="edition-label">Volume 8.0</span>
+              <h3 class="edition-title">Liminal</h3>
+
+              <div class="edition-card-footer">
+                <span>Explore edition</span>
+                <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+              </div>
+            </div>
+          </a>
+
+
+          <a
+            class="edition-card"
+            href="edition-9.html"
+            data-title="9.0 Volume 1 Brave New World"
+          >
+            <div class="edition-card-top">
+              <span class="edition-number">09</span>
+              <span class="edition-index">Edition 09</span>
+            </div>
+
+            <div class="edition-art" aria-hidden="true">
+              <span>09</span>
+            </div>
+
+            <div class="edition-card-body">
+              <span class="edition-label">Volume 9.0 · Vol. 1</span>
+              <h3 class="edition-title">Brave New World</h3>
+
+              <div class="edition-card-footer">
+                <span>Explore edition</span>
+                <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+              </div>
+            </div>
+          </a>
+
+        </div>
+
+
+        <!-- Empty search result -->
+
+        <div class="no-results" id="noResults">
+          <i class="bi bi-search fs-4 d-block mb-2" aria-hidden="true"></i>
+          No matching edition found. Try another title or edition number.
+        </div>
+
+
+        <!-- Closing note -->
+
+        <aside class="archive-note">
+
+          <div>
+            <h3>One archive. Different perspectives.</h3>
+
+            <p>
+              Each edition can have its own dedicated page with its theme,
+              table of contents, individual articles, case analyses and
+              available reading material.
+            </p>
+          </div>
+
+          <i class="bi bi-journals" aria-hidden="true"></i>
+
+        </aside>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- =====================================
+       SHARED FOOTER
+  ====================================== -->
+
+  <footer class="site-footer">
+    <div class="container-editorial">
+
+      <div class="footer-main">
+
+        <div class="footer-brand-block">
+          <a class="footer-brand text-decoration-none" href="index.html#home">
+            Vox<span>Legis</span>
+          </a>
+
+          <p class="footer-description">
+            A proposed digital publication for legal scholarship, critical
+            inquiry and conversations about law and society.
+          </p>
+        </div>
+
+
+        <div>
+          <h2 class="footer-heading">Explore</h2>
+
+          <nav class="footer-links" aria-label="Footer navigation">
+            <a href="index.html#latest">Articles &amp; ideas</a>
+            <a href="index.html#case-analysis">Case analysis</a>
+            <a href="about.html">About VoxLegis</a>
+            <a href="editions.html">Editions archive</a>
+            <a href="index.html#contribute">Contribute</a>
+          </nav>
+        </div>
+
+
+        <div>
+          <h2 class="footer-heading">Institutional context</h2>
+
+          <div class="footer-links">
+            <span>Faculty of Law</span>
+            <span>The Maharaja Sayajirao University of Baroda</span>
+            <span>Vadodara, Gujarat, India</span>
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="footer-bottom">
+
+        <p>
+          © <span id="currentYear">2026</span> VoxLegis. Design concept for
+          review.
+        </p>
+
+        <p class="prototype-note">
+          Illustrative content · Not yet an official publication website
+        </p>
+
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- Bootstrap JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+  <!-- Editions Search -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+      const editionSearch = document.getElementById("editionSearch");
+      const editionCards = document.querySelectorAll(".edition-card");
+      const noResults = document.getElementById("noResults");
+      const archiveStatus = document.getElementById("archiveStatus");
+      const editionCount = document.getElementById("editionCount");
+
+      function filterEditions() {
+
+        const query = editionSearch.value.trim().toLowerCase();
+
+        let visibleCount = 0;
+
+        editionCards.forEach(function (card) {
+
+          const title = card.dataset.title.toLowerCase();
+          const matches = title.includes(query);
+
+          card.hidden = !matches;
+
+          if (matches) {
+            visibleCount++;
+          }
+
+        });
+
+        noResults.style.display =
+          visibleCount === 0 ? "block" : "none";
+
+        archiveStatus.textContent = query
+          ? "Showing " + visibleCount + " of " + editionCards.length + " editions"
+          : "Showing all " + editionCards.length + " listed editions";
+
+        editionCount.textContent =
+          String(visibleCount).padStart(2, "0");
+
+      }
+
+      editionSearch.addEventListener("input", filterEditions);
+
+      // Footer year
+      document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
+
+    });
+  </script>
+
+</body>
+</html>

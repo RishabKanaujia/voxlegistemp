@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Designs | voxlegis</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px 18px;
+            background: #292d35;
+            font-family: Arial, sans-serif;
+        }
+
+        .design-wrapper {
+            width: 100%;
+            max-width: 750px;
+            padding: 45px;
+            background: #3b404a;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .brand {
+            color: #ffffff;
+            font-size: 30px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .brand span {
+            color: #c49a50;
+        }
+
+        .subtitle {
+            color: #c1c4ca;
+            font-size: 15px;
+            margin-bottom: 35px;
+        }
+
+        .design-btn {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 23px 26px;
+            margin-bottom: 17px;
+
+            background: #292d35;
+            border: 1px solid rgba(196, 154, 80, 0.35);
+            border-radius: 13px;
+
+            color: #ffffff;
+            font-size: 19px;
+            font-weight: 600;
+            text-decoration: none;
+
+            transition: all 0.3s ease;
+        }
+
+        .design-btn:hover {
+            background: #c49a50;
+            border-color: #c49a50;
+            color: #20242c;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .design-btn span:last-child {
+            font-size: 23px;
+        }
+
+        .footer-text {
+            color: #999fa9;
+            font-size: 12px;
+            margin-top: 28px;
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 576px) {
+            .design-wrapper {
+                padding: 30px 20px;
+            }
+
+            .brand {
+                font-size: 26px;
+            }
+
+            .design-btn {
+                padding: 20px 18px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="design-wrapper">
+
+        <div class="brand">
+            Vox <span>Legis</span>
+        </div>
+
+        <p class="subtitle">
+            Choose a sample design to explore
+        </p>
+
+        <a href="/2nd/index.html" target="_blank" rel="noopener noreferrer" class="design-btn">
+            <span>Sample Design 1</span>
+            <span>↗</span>
+        </a>
+
+        <a href="/main.html" target="_blank" rel="noopener noreferrer" class="design-btn">
+            <span>Sample Design 2</span>
+            <span>↗</span>
+        </a>
+
+        <a href="/3rd/index.html" target="_blank" rel="noopener noreferrer" class="design-btn">
+            <span>Sample Design 3</span>
+            <span>↗</span>
+        </a>
+
+        <p class="footer-text">
+            © 2026 Rishab kanaujia. All Rights Reserved.
+        </p>
+
+    </main>
+
+</body>
+
+</html>

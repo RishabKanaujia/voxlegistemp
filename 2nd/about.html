@@ -1,0 +1,1349 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta
+    name="description"
+    content="Learn about the Faculty of Law, MSU Baroda, the VoxLegis publication concept, its blog, and its team."
+  >
+  <meta name="theme-color" content="#172b3a">
+
+  <title>About VoxLegis | Legal Scholarship & Ideas</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Bootstrap -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+
+  <!-- Bootstrap Icons -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root {
+      --ink: #172b3a;
+      --ink-soft: #2c4352;
+      --paper: #f7f5f0;
+      --white: #fffefa;
+      --muted: #68747a;
+      --line: #dedbd2;
+      --wine: #7b303d;
+      --brass: #b28b50;
+
+      --serif: "Libre Baskerville", Georgia, serif;
+      --sans: "DM Sans", Arial, sans-serif;
+
+      --container: 1180px;
+      --ease: 180ms ease;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 15px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid var(--brass);
+      outline-offset: 4px;
+    }
+
+    .container-editorial {
+      width: min(calc(100% - 48px), var(--container));
+      margin-inline: auto;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      color: var(--wine);
+      font-size: 0.69rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 25px;
+      height: 1px;
+      background: var(--brass);
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -5rem;
+      left: 1rem;
+      z-index: 2000;
+      padding: 0.7rem 1rem;
+      background: var(--white);
+      color: var(--ink);
+    }
+
+    .skip-link:focus {
+      top: 1rem;
+    }
+
+    /* Institutional strip */
+
+    .institution-strip {
+      background: var(--ink);
+      color: #e9e7e0;
+      font-size: 0.69rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .strip-inner {
+      min-height: 35px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .strip-inner p {
+      margin: 0;
+    }
+
+    /* Masthead */
+
+    .masthead {
+      background: var(--white);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .masthead-inner {
+      min-height: 116px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 15px;
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      width: 51px;
+      height: 51px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--brass);
+      color: var(--wine);
+      font-family: var(--serif);
+      font-size: 1.65rem;
+      line-height: 1;
+    }
+
+    .brand-name {
+      display: block;
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      font-weight: 700;
+      letter-spacing: -0.07em;
+      line-height: 1.12;
+    }
+
+    .brand-name span {
+      color: var(--wine);
+    }
+
+    .brand-tagline {
+      display: block;
+      margin-top: 0.35rem;
+      color: var(--muted);
+      font-size: 0.66rem;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .masthead-note {
+      max-width: 255px;
+      padding-left: 1.25rem;
+      border-left: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.78rem;
+      line-height: 1.6;
+    }
+
+    .masthead-note strong {
+      display: block;
+      margin-bottom: 0.25rem;
+      color: var(--ink);
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* Main navigation */
+
+    .main-nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .main-nav .navbar {
+      padding: 0;
+    }
+
+    .main-nav .navbar-nav {
+      gap: 0.25rem;
+    }
+
+    .main-nav .nav-link {
+      position: relative;
+      padding: 1rem 0.95rem !important;
+      color: #46545d;
+      font-size: 0.77rem;
+      font-weight: 600;
+      transition: color var(--ease);
+    }
+
+    .main-nav .nav-link::after {
+      position: absolute;
+      right: 0.95rem;
+      bottom: 0;
+      left: 0.95rem;
+      height: 2px;
+      background: var(--wine);
+      content: "";
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform var(--ease);
+    }
+
+    .main-nav .nav-link:hover,
+    .main-nav .nav-link.active {
+      color: var(--wine);
+    }
+
+    .main-nav .nav-link:hover::after,
+    .main-nav .nav-link.active::after {
+      transform: scaleX(1);
+    }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      margin-left: auto;
+      padding: 0.62rem 0.95rem;
+      background: var(--wine);
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background var(--ease);
+    }
+
+    .nav-cta:hover {
+      background: var(--ink);
+      color: white;
+    }
+
+    .main-nav .navbar-toggler {
+      border: 1px solid var(--line);
+      border-radius: 0;
+      padding: 0.4rem 0.65rem;
+    }
+
+    .main-nav .navbar-toggler:focus {
+      box-shadow: none;
+    }
+
+    /* About page introduction */
+
+    .about-intro {
+      padding: 3.8rem 0 3rem;
+    }
+
+    .about-intro-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: end;
+      gap: 3rem;
+      padding-bottom: 2.6rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .about-intro h1 {
+      max-width: 700px;
+      margin: 0.8rem 0 0;
+      font-family: var(--serif);
+      font-size: clamp(2.5rem, 5vw, 4.2rem);
+      font-weight: 400;
+      letter-spacing: -0.065em;
+      line-height: 1.2;
+    }
+
+    .about-intro h1 em {
+      color: var(--wine);
+      font-style: normal;
+    }
+
+    .intro-description {
+      max-width: 440px;
+      margin: 0;
+      color: #58656c;
+      font-size: 0.94rem;
+    }
+
+    .intro-description p {
+      margin: 0 0 1rem;
+    }
+
+    /* In-page About navigation */
+
+    .about-index {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      margin-top: 2rem;
+      border: 1px solid var(--line);
+      background: var(--white);
+    }
+
+    .about-index a {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+      padding: 1.2rem 1.15rem;
+      border-right: 1px solid var(--line);
+      text-decoration: none;
+      transition: background var(--ease);
+    }
+
+    .about-index a:last-child {
+      border-right: 0;
+    }
+
+    .about-index a:hover {
+      background: #eee9df;
+    }
+
+    .index-number {
+      color: var(--brass);
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      line-height: 1.2;
+    }
+
+    .index-label {
+      color: var(--ink);
+      font-size: 0.8rem;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+
+    .index-arrow {
+      margin-top: 0.2rem;
+      color: var(--wine);
+      font-size: 0.85rem;
+    }
+
+    /* Shared content section */
+
+    .about-section {
+      padding: 4rem 0;
+      border-top: 1px solid var(--line);
+      scroll-margin-top: 95px;
+    }
+
+    .about-section:nth-of-type(even) {
+      background: var(--white);
+    }
+
+    .section-layout {
+      display: grid;
+      grid-template-columns: 0.65fr 1.35fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .section-aside {
+      position: relative;
+      padding-top: 0.25rem;
+    }
+
+    .section-number {
+      display: block;
+      margin-bottom: 1rem;
+      color: var(--brass);
+      font-family: var(--serif);
+      font-size: clamp(3rem, 5vw, 4.8rem);
+      letter-spacing: -0.08em;
+      line-height: 1;
+    }
+
+    .section-aside-label {
+      display: block;
+      max-width: 220px;
+      color: var(--muted);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      line-height: 1.8;
+      text-transform: uppercase;
+    }
+
+    .section-content {
+      min-width: 0;
+      max-width: 760px;
+    }
+
+    .section-content h2 {
+      margin: 0.7rem 0 1.25rem;
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 3.2vw, 2.7rem);
+      font-weight: 400;
+      letter-spacing: -0.055em;
+      line-height: 1.35;
+    }
+
+    .section-content h2 em {
+      color: var(--wine);
+      font-style: normal;
+    }
+
+    .section-content p {
+      margin-bottom: 1rem;
+      color: #58656c;
+      font-size: 0.9rem;
+      line-height: 1.9;
+    }
+
+    .section-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    .section-rule {
+      width: 52px;
+      height: 2px;
+      margin: 1.6rem 0;
+      background: var(--brass);
+    }
+
+    /* Editorial note within each section */
+
+    .editorial-note {
+      margin-top: 1.8rem;
+      padding: 1.3rem 1.45rem;
+      border-left: 3px solid var(--brass);
+      background: #f0ede5;
+      color: #59656b;
+      font-size: 0.82rem;
+      line-height: 1.8;
+    }
+
+    .editorial-note strong {
+      display: block;
+      margin-bottom: 0.35rem;
+      color: var(--ink);
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    /* Blog and team details */
+
+    .topic-list {
+      margin: 1.5rem 0 0;
+      padding: 0;
+      list-style: none;
+      border-top: 1px solid var(--line);
+    }
+
+    .topic-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.9rem;
+      padding: 0.9rem 0;
+      border-bottom: 1px solid var(--line);
+      color: #58656c;
+      font-size: 0.85rem;
+    }
+
+    .topic-list i {
+      margin-top: 0.25rem;
+      color: var(--wine);
+    }
+
+    .team-note {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-top: 1.7rem;
+      padding: 1.5rem;
+      border: 1px solid var(--line);
+      background: var(--paper);
+    }
+
+    .team-note-icon {
+      flex: 0 0 42px;
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--brass);
+      color: var(--wine);
+      font-size: 1.1rem;
+    }
+
+    .team-note p {
+      margin: 0;
+      font-size: 0.82rem;
+    }
+
+    /* Footer: consistent with index.html */
+
+    .site-footer {
+      background: var(--ink);
+      color: #e7e7e1;
+    }
+
+    .footer-main {
+      display: grid;
+      grid-template-columns: 1.25fr 0.7fr 0.9fr;
+      gap: 3rem;
+      padding: 3.2rem 0 2.6rem;
+    }
+
+    .footer-brand {
+      color: white;
+      font-family: var(--serif);
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.06em;
+      text-decoration: none;
+    }
+
+    .footer-brand span {
+      color: #d4b27b;
+    }
+
+    .footer-description {
+      max-width: 350px;
+      margin: 0.9rem 0 0;
+      color: #bac5c8;
+      font-size: 0.8rem;
+    }
+
+    .footer-heading {
+      margin: 0.25rem 0 1rem;
+      color: #d4b27b;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .footer-links {
+      display: grid;
+      gap: 0.55rem;
+    }
+
+    .footer-links a,
+    .footer-links span {
+      width: fit-content;
+      color: #d7dedd;
+      font-size: 0.78rem;
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      color: white;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      padding: 1.1rem 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.17);
+      color: #aebbc0;
+      font-size: 0.68rem;
+    }
+
+    .footer-bottom p {
+      margin: 0;
+    }
+
+    .prototype-note {
+      color: #e4c99e;
+    }
+
+    /* Responsive layouts */
+
+    @media (min-width: 1440px) {
+      .container-editorial {
+        width: min(calc(100% - 80px), var(--container));
+      }
+    }
+
+    @media (max-width: 991.98px) {
+      .container-editorial {
+        width: min(calc(100% - 36px), var(--container));
+      }
+
+      .masthead-inner {
+        min-height: 100px;
+      }
+
+      .masthead-note {
+        max-width: 215px;
+      }
+
+      .main-nav .nav-link {
+        padding-inline: 0.65rem !important;
+      }
+
+      .main-nav .nav-link::after {
+        right: 0.65rem;
+        left: 0.65rem;
+      }
+
+      .nav-cta {
+        margin: 0.6rem 0 0.8rem;
+      }
+
+      .about-intro-grid {
+        grid-template-columns: 1fr 0.85fr;
+        gap: 2rem;
+      }
+
+      .section-layout {
+        grid-template-columns: 0.55fr 1.45fr;
+        gap: 2.5rem;
+      }
+
+      .footer-main {
+        gap: 2rem;
+      }
+    }
+
+    @media (max-width: 767.98px) {
+      .container-editorial {
+        width: min(calc(100% - 32px), var(--container));
+      }
+
+      .institution-strip .strip-inner {
+        min-height: 32px;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .institution-strip .strip-secondary {
+        display: none;
+      }
+
+      .masthead-inner {
+        min-height: 91px;
+      }
+
+      .brand {
+        gap: 10px;
+      }
+
+      .brand-mark {
+        width: 42px;
+        height: 42px;
+        font-size: 1.35rem;
+      }
+
+      .brand-name {
+        font-size: 2.05rem;
+      }
+
+      .brand-tagline {
+        max-width: 230px;
+        font-size: 0.55rem;
+        letter-spacing: 0.08em;
+      }
+
+      .masthead-note {
+        display: none;
+      }
+
+      .main-nav .navbar {
+        padding: 0.35rem 0;
+      }
+
+      .main-nav .navbar-collapse {
+        padding: 0.4rem 0 0.7rem;
+      }
+
+      .main-nav .nav-link {
+        padding: 0.7rem 0.15rem !important;
+      }
+
+      .main-nav .nav-link::after {
+        right: auto;
+        left: 0.15rem;
+        width: 28px;
+      }
+
+      .nav-cta {
+        margin: 0.5rem 0 0.25rem;
+      }
+
+      .about-intro {
+        padding: 2.4rem 0 2.5rem;
+      }
+
+      .about-intro-grid {
+        grid-template-columns: 1fr;
+        gap: 1.3rem;
+        padding-bottom: 1.7rem;
+      }
+
+      .about-intro h1 {
+        font-size: clamp(2.45rem, 11vw, 3.6rem);
+      }
+
+      .intro-description {
+        max-width: 560px;
+        font-size: 0.88rem;
+      }
+
+      .about-index {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .about-index a {
+        padding: 1rem;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .about-index a:nth-child(2) {
+        border-right: 0;
+      }
+
+      .about-index a:nth-child(3),
+      .about-index a:nth-child(4) {
+        border-bottom: 0;
+      }
+
+      .about-section {
+        padding: 3rem 0;
+      }
+
+      .section-layout {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+      }
+
+      .section-number {
+        margin-bottom: 0.45rem;
+        font-size: 2.8rem;
+      }
+
+      .section-aside-label {
+        max-width: none;
+      }
+
+      .section-content h2 {
+        font-size: clamp(1.7rem, 7vw, 2.3rem);
+      }
+
+      .footer-main {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem 1.3rem;
+        padding: 2.5rem 0 2rem;
+      }
+
+      .footer-brand-block {
+        grid-column: 1 / -1;
+      }
+
+      .footer-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .container-editorial {
+        width: calc(100% - 28px);
+      }
+
+      .brand-name {
+        font-size: 1.85rem;
+      }
+
+      .brand-tagline {
+        font-size: 0.49rem;
+      }
+
+      .about-index a {
+        padding: 0.85rem;
+      }
+
+      .index-label {
+        font-size: 0.74rem;
+      }
+
+      .team-note {
+        padding: 1rem;
+      }
+
+      .footer-main {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <!-- Institutional strip -->
+  <div class="institution-strip">
+    <div class="container-editorial strip-inner">
+      <p>Faculty of Law · The Maharaja Sayajirao University of Baroda</p>
+      <p class="strip-secondary">Vadodara, Gujarat, India</p>
+    </div>
+  </div>
+
+  <!-- Masthead -->
+  <header class="masthead">
+    <div class="container-editorial masthead-inner">
+      <a class="brand" href="index.html" aria-label="VoxLegis homepage">
+        <span class="brand-mark" aria-hidden="true">V</span>
+
+        <span>
+          <span class="brand-name">Vox<span>Legis</span></span>
+          <span class="brand-tagline">
+            A space for legal thought and scholarship
+          </span>
+        </span>
+      </a>
+
+      <div class="masthead-note">
+        <strong>Ideas. Law. Public life.</strong>
+        A proposed digital publication for thoughtful engagement with law and
+        society.
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <div class="main-nav">
+    <nav class="navbar navbar-expand-md" aria-label="Primary navigation">
+      <div class="container-editorial">
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#primaryNavigation"
+          aria-controls="primaryNavigation"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="bi bi-list" aria-hidden="true"></i>
+          <span class="ms-1 small">Menu</span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="primaryNavigation">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#home">Home</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#latest">Articles</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#case-analysis">
+                Case Analysis
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                href="about.html"
+                aria-current="page"
+              >
+                About
+              </a>
+            </li>
+          </ul>
+
+          <a class="nav-cta" href="index.html#contribute">
+            Contribute
+            <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <main id="main-content">
+
+    <!-- About introduction -->
+    <section class="about-intro" aria-labelledby="about-title">
+      <div class="container-editorial">
+
+        <div class="about-intro-grid">
+          <div>
+            <span class="eyebrow">About the initiative</span>
+
+            <h1 id="about-title">
+              Understanding the ideas behind
+              <em>VoxLegis.</em>
+            </h1>
+          </div>
+
+          <div class="intro-description">
+            <p>
+              VoxLegis is a proposed digital publication concept centred on
+              legal scholarship, thoughtful writing and contemporary questions
+              of law and society.
+            </p>
+
+            <p>
+              Explore the academic context, the publication's purpose, its
+              proposed blog and the people who will shape its development.
+            </p>
+          </div>
+        </div>
+
+        <!-- Links to the four sections -->
+        <nav class="about-index" aria-label="About sections">
+          <a href="#faculty-of-law">
+            <span class="index-number">01</span>
+            <span class="index-label">Faculty of Law, MSU</span>
+            <span class="index-arrow">
+              <i class="bi bi-arrow-down-right" aria-hidden="true"></i>
+            </span>
+          </a>
+
+          <a href="#voxlegis">
+            <span class="index-number">02</span>
+            <span class="index-label">VoxLegis</span>
+            <span class="index-arrow">
+              <i class="bi bi-arrow-down-right" aria-hidden="true"></i>
+            </span>
+          </a>
+
+          <a href="#the-blog">
+            <span class="index-number">03</span>
+            <span class="index-label">The Blog</span>
+            <span class="index-arrow">
+              <i class="bi bi-arrow-down-right" aria-hidden="true"></i>
+            </span>
+          </a>
+
+          <a href="#the-team">
+            <span class="index-number">04</span>
+            <span class="index-label">The Team</span>
+            <span class="index-arrow">
+              <i class="bi bi-arrow-down-right" aria-hidden="true"></i>
+            </span>
+          </a>
+        </nav>
+
+      </div>
+    </section>
+
+    <!-- 01: Faculty of Law -->
+    <section
+      class="about-section"
+      id="faculty-of-law"
+      aria-labelledby="faculty-title"
+    >
+      <div class="container-editorial">
+        <div class="section-layout">
+
+          <aside class="section-aside">
+            <span class="section-number">01</span>
+            <span class="section-aside-label">
+              Academic context
+            </span>
+          </aside>
+
+          <div class="section-content">
+            <span class="eyebrow">The institution</span>
+
+            <h2 id="faculty-title">
+              Faculty of Law, <em>MSU Baroda</em>
+            </h2>
+
+            <p>
+              The Faculty of Law at The Maharaja Sayajirao University of
+              Baroda, Vadodara, provides the academic context in which the
+              VoxLegis concept is being developed.
+            </p>
+
+            <p>
+              Legal education involves more than understanding statutes and
+              judgments. It also encourages critical thinking, research,
+              reasoned argument and engagement with the relationship between
+              law and society.
+            </p>
+
+            <p>
+              This section can introduce the Faculty, its academic environment
+              and the relevance of legal research and writing to students and
+              the wider legal community.
+            </p>
+
+            <div class="editorial-note">
+              <strong>About this section</strong>
+              Official institutional details, approved descriptions and any
+              formal association with VoxLegis should be added after
+              verification and confirmation.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 02: VoxLegis -->
+    <section
+      class="about-section"
+      id="voxlegis"
+      aria-labelledby="voxlegis-title"
+    >
+      <div class="container-editorial">
+        <div class="section-layout">
+
+          <aside class="section-aside">
+            <span class="section-number">02</span>
+            <span class="section-aside-label">
+              Purpose and vision
+            </span>
+          </aside>
+
+          <div class="section-content">
+            <span class="eyebrow">The publication</span>
+
+            <h2 id="voxlegis-title">
+              A space for legal thought and
+              <em>scholarship.</em>
+            </h2>
+
+            <p>
+              VoxLegis is conceived as a digital space for exploring legal
+              ideas through research, commentary and informed discussion.
+              Its focus is on encouraging readers to look beyond the bare
+              text of the law and engage with the reasoning, context and
+              consequences behind legal questions.
+            </p>
+
+            <p>
+              The proposed publication may bring together student writing,
+              case commentary, research-led articles and discussions on
+              contemporary legal developments.
+            </p>
+
+            <p>
+              Its guiding approach is simple: present legal ideas clearly,
+              support arguments with reliable sources and make room for
+              thoughtful disagreement.
+            </p>
+
+            <div class="section-rule"></div>
+
+            <p>
+              VoxLegis is currently presented as a publication concept.
+              Its final scope, editorial policies and institutional
+              arrangements remain subject to confirmation.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 03: The Blog -->
+    <section
+      class="about-section"
+      id="the-blog"
+      aria-labelledby="blog-title"
+    >
+      <div class="container-editorial">
+        <div class="section-layout">
+
+          <aside class="section-aside">
+            <span class="section-number">03</span>
+            <span class="section-aside-label">
+              Writing and ideas
+            </span>
+          </aside>
+
+          <div class="section-content">
+            <span class="eyebrow">The reading desk</span>
+
+            <h2 id="blog-title">
+              The Blog: law beyond the
+              <em>textbook.</em>
+            </h2>
+
+            <p>
+              The VoxLegis blog is envisioned as a place for accessible,
+              research-informed writing on legal developments, judicial
+              decisions and questions that connect law with everyday life.
+            </p>
+
+            <p>
+              It can provide space for writers to explain complex legal
+              issues, examine different interpretations and develop
+              arguments grounded in legislation, judgments and credible
+              research.
+            </p>
+
+            <ul class="topic-list">
+              <li>
+                <i class="bi bi-journal-text" aria-hidden="true"></i>
+                <span>
+                  <strong>Legal analysis</strong> — statutory interpretation,
+                  constitutional questions and legal principles.
+                </span>
+              </li>
+
+              <li>
+                <i class="bi bi-bank" aria-hidden="true"></i>
+                <span>
+                  <strong>Case commentary</strong> — judicial reasoning,
+                  significant decisions and their wider implications.
+                </span>
+              </li>
+
+              <li>
+                <i class="bi bi-globe2" aria-hidden="true"></i>
+                <span>
+                  <strong>Law and society</strong> — contemporary legal
+                  developments, institutions, rights and public life.
+                </span>
+              </li>
+
+              <li>
+                <i class="bi bi-pencil-square" aria-hidden="true"></i>
+                <span>
+                  <strong>Student perspectives</strong> — research,
+                  reflections and carefully argued legal opinions.
+                </span>
+              </li>
+            </ul>
+
+            <div class="editorial-note">
+              <strong>Editorial approach</strong>
+              These are proposed subject areas, not a statement of an
+              established submission policy. Publication rules and
+              contributor eligibility can be added when finalised.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 04: The Team -->
+    <section
+      class="about-section"
+      id="the-team"
+      aria-labelledby="team-title"
+    >
+      <div class="container-editorial">
+        <div class="section-layout">
+
+          <aside class="section-aside">
+            <span class="section-number">04</span>
+            <span class="section-aside-label">
+              People behind the work
+            </span>
+          </aside>
+
+          <div class="section-content">
+            <span class="eyebrow">The people</span>
+
+            <h2 id="team-title">
+              The Team: bringing legal ideas
+              <em>together.</em>
+            </h2>
+
+            <p>
+              A meaningful academic publication depends on people who value
+              careful research, clear writing and responsible discussion.
+              The team section will introduce the individuals involved in
+              developing and contributing to VoxLegis.
+            </p>
+
+            <p>
+              It can include the editorial team, faculty guidance, student
+              contributors and other roles, wherever applicable and formally
+              confirmed.
+            </p>
+
+            <div class="team-note">
+              <div class="team-note-icon" aria-hidden="true">
+                <i class="bi bi-people"></i>
+              </div>
+
+              <div>
+                <p>
+                  <strong>Team profiles will be added here.</strong>
+                </p>
+                <p>
+                  Names, photographs, designations and biographies can be
+                  included once the team and its roles have been confirmed.
+                  No individual appointments or institutional positions are
+                  assumed on this page.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container-editorial">
+
+      <div class="footer-main">
+
+        <div class="footer-brand-block">
+          <a class="footer-brand" href="index.html">
+            Vox<span>Legis</span>
+          </a>
+
+          <p class="footer-description">
+            A proposed digital publication for legal scholarship, critical
+            inquiry and conversations about law and society.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="footer-heading">Explore</h2>
+
+          <nav class="footer-links" aria-label="Footer navigation">
+            <a href="index.html#latest">Articles &amp; ideas</a>
+            <a href="index.html#case-analysis">Case analysis</a>
+            <a href="about.html#faculty-of-law">Faculty of Law, MSU</a>
+            <a href="about.html#voxlegis">About VoxLegis</a>
+            <a href="about.html#the-blog">The Blog</a>
+            <a href="about.html#the-team">The Team</a>
+          </nav>
+        </div>
+
+        <div>
+          <h2 class="footer-heading">Institutional context</h2>
+
+          <div class="footer-links">
+            <span>Faculty of Law</span>
+            <span>The Maharaja Sayajirao University of Baroda</span>
+            <span>Vadodara, Gujarat, India</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          © <span id="currentYear">2026</span> VoxLegis. Design concept for
+          review.
+        </p>
+
+        <p class="prototype-note">
+          Illustrative content · Not yet an official publication website
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    "use strict";
+
+    // Keep the footer year current.
+    const yearElement = document.getElementById("currentYear");
+
+    if (yearElement) {
+      yearElement.textContent = String(new Date().getFullYear());
+    }
+
+    // Close the mobile navigation after following a link.
+    const navigationElement =
+      document.getElementById("primaryNavigation");
+
+    if (navigationElement && window.bootstrap) {
+      navigationElement.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          if (window.matchMedia("(max-width: 767.98px)").matches) {
+            const collapse = window.bootstrap.Collapse.getOrCreateInstance(
+              navigationElement,
+              { toggle: false }
+            );
+
+            collapse.hide();
+          }
+        });
+      });
+    }
+  </script>
+</body>
+</html>
